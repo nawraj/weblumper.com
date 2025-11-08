@@ -134,31 +134,31 @@ export const blogData = [
 
 export const socialData = [
     {
-        link:'https://1.envato.market/upcover',
+        link:'https://weblumper.com',
         icon:'shopping-cart'
     },
     {
-        link:'https://dribbble.com/shreethemes',
+        link:'https://dribbble.com/',
         icon:'dribbble'
     },
     {
-        link:'http://linkedin.com/company/shreethemes',
+        link:'http://linkedin.com/company/',
         icon:'linkedin'
     },
     {
-        link:'https://www.facebook.com/shreethemes',
+        link:'https://www.facebook.com/',
         icon:'facebook'
     },
     {
-        link:'https://www.instagram.com/shreethemes',
+        link:'https://www.instagram.com/',
         icon:'instagram'
     },
     {
-        link:'https://twitter.com/shreethemes',
+        link:'https://twitter.com/',
         icon:'twitter'
     },
     {
-        link:'mailto:support@shreethemes.in',
+        link:'hello@weblumper.com',
         icon:'mail'
     },
 ]

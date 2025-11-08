@@ -1,0 +1,289 @@
+---
+import blog1 from '../assets/images/blog/01.jpg'
+import blog2 from '../assets/images/blog/02.jpg'
+import blog3 from '../assets/images/blog/03.jpg'
+import blog4 from '../assets/images/blog/03.jpg'
+
+let activeTab = 1
+
+---
+<div class="container relative">
+    <div class="grid grid-cols-1 pb-6 text-center">
+        <h3 class="font-semibold text-2xl leading-normal mb-4">A Performance-driven Digital Agency</h3>
+        
+        <p class="text-slate-400 max-w-xl mx-auto">This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+    </div>
+
+    <div class="grid md:grid-cols-12 grid-cols-1 mt-6 gap-6">
+  <!-- Left Side Tabs -->
+<div class="lg:col-span-4 md:col-span-5">
+  <div class="sticky top-20">
+    <ul
+      class="flex-column p-6 bg-white dark:bg-slate-900 shadow-sm dark:shadow-gray-700 rounded-md"
+      id="myTab"
+      data-tabs-toggle="#myTabContent"
+      role="tablist"
+    >
+      <!-- Step 1 -->
+      <li role="presentation">
+        <button
+          class="px-4 py-1 text-start text-base font-medium rounded-md w-full hover:text-teal-500 duration-500"
+          id="discovery-tab"
+          data-tabs-target="#discovery"
+          type="button"
+          role="tab"
+          aria-controls="discovery"
+          aria-selected="true"
+        >
+          <span class="text-lg mt-2 block">Discovery & Planning</span>
+          <span class="block mt-1">
+            Understanding your goals, audience, and project requirements to define a clear roadmap.
+          </span>
+        </button>
+      </li>
+
+      <!-- Step 2 -->
+      <li role="presentation">
+        <button
+          class="px-4 py-1 text-start text-base font-medium rounded-md w-full mt-6 duration-500"
+          id="design-tab"
+          data-tabs-target="#design"
+          type="button"
+          role="tab"
+          aria-controls="design"
+          aria-selected="false"
+        >
+          <span class="text-lg mt-2 block">Design & Prototyping</span>
+          <span class="block mt-1">
+            Crafting intuitive and beautiful user experiences through collaborative prototyping and design.
+          </span>
+        </button>
+      </li>
+
+      <!-- Step 3 -->
+      <li role="presentation">
+        <button
+          class="px-4 py-1 text-start text-base font-medium rounded-md w-full mt-6 duration-500"
+          id="development-tab"
+          data-tabs-target="#development"
+          type="button"
+          role="tab"
+          aria-controls="development"
+          aria-selected="false"
+        >
+          <span class="text-lg mt-2 block">Development & Testing</span>
+          <span class="block mt-1">
+            Building your website or application using the latest technologies and thorough QA testing.
+          </span>
+        </button>
+      </li>
+
+      <!-- Step 4 -->
+      <li role="presentation">
+        <button
+          class="px-4 py-1 text-start text-base font-medium rounded-md w-full mt-6 duration-500"
+          id="launch-tab"
+          data-tabs-target="#launch"
+          type="button"
+          role="tab"
+          aria-controls="launch"
+          aria-selected="false"
+        >
+          <span class="text-lg mt-2 block">Launch & Support</span>
+          <span class="block mt-1">
+            Deploying, monitoring, and providing ongoing updates to ensure long-term success.
+          </span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Right Side Tab Content -->
+<div class="lg:col-span-8 md:col-span-7">
+  <div
+    id="myTabContent"
+    class="p-6 bg-white dark:bg-slate-900 shadow-sm dark:shadow-gray-700 rounded-md"
+  >
+    <!-- Discovery Tab -->
+    <div id="discovery" role="tabpanel" aria-labelledby="discovery-tab">
+      <img src={blog1.src} class="shadow-sm dark:shadow-gray-700 rounded-md" alt="Discovery Phase" />
+      <div class="mt-6">
+        <h5 class="text-lg font-medium">Discovery & Planning</h5>
+        <p class="text-slate-400 mt-4">
+          We start by understanding your business, goals, and users. Through workshops and research,
+          we define your project scope, content structure, and a clear strategy for success.
+        </p>
+        <div class="mt-6">
+          <a href="#" class="text-teal-500">
+            Read More <i class="mdi mdi-chevron-right align-middle"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design Tab -->
+    <div class="hidden" id="design" role="tabpanel" aria-labelledby="design-tab">
+      <img src={blog2.src} class="shadow-sm dark:shadow-gray-700 rounded-md" alt="Design Phase" />
+      <div class="mt-6">
+        <h5 class="text-lg font-medium">Design & Prototyping</h5>
+        <p class="text-slate-400 mt-4">
+          Our design team creates visually engaging and user-friendly interfaces. We focus on
+          usability and brand consistency while crafting high-fidelity mockups and prototypes.
+        </p>
+        <div class="mt-6">
+          <a href="#" class="text-teal-500">
+            Read More <i class="mdi mdi-chevron-right align-middle"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Development Tab -->
+    <div class="hidden" id="development" role="tabpanel" aria-labelledby="development-tab">
+      <img src={blog3.src} class="shadow-sm dark:shadow-gray-700 rounded-md" alt="Development Phase" />
+      <div class="mt-6">
+        <h5 class="text-lg font-medium">Development & Testing</h5>
+        <p class="text-slate-400 mt-4">
+          Using cutting-edge technologies like Astro, React, WordPress, and Shopify, we develop
+          high-performance, scalable, and secure digital experiences — rigorously tested before launch.
+        </p>
+        <div class="mt-6">
+          <a href="#" class="text-teal-500">
+            Read More <i class="mdi mdi-chevron-right align-middle"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Launch Tab -->
+    <div class="hidden" id="launch" role="tabpanel" aria-labelledby="launch-tab">
+      <img src={blog4.src} class="shadow-sm dark:shadow-gray-700 rounded-md" alt="Launch Phase" />
+      <div class="mt-6">
+        <h5 class="text-lg font-medium">Launch & Support</h5>
+        <p class="text-slate-400 mt-4">
+          Once everything is ready, we handle deployment and monitoring. Post-launch, we offer
+          maintenance, analytics tracking, and continuous improvements to ensure sustained growth.
+        </p>
+        <div class="mt-6">
+          <a href="#" class="text-teal-500">
+            Read More <i class="mdi mdi-chevron-right align-middle"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div><!--end grid-->
+</div><!--end container-->
+
+<script>
+    // @ts-nocheck
+    try {
+    const Default = {
+        defaultTabId: null,
+        activeClasses: 'text-white bg-teal-500',
+        inactiveClasses: 'hover:text-teal-500 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800',
+        onShow: () => { }
+    }
+    
+    class Tabs {
+        constructor(items = [], options = {}) {
+            this._items = items
+            this._activeTab = options ? this.getTab(options.defaultTabId) : null
+            this._options = { ...Default, ...options }
+            this._init()
+        }
+    
+        _init() {
+            if (this._items.length) {
+                // set the first tab as active if not set by explicitly
+                if (!this._activeTab) {
+                    this._setActiveTab(this._items[0])
+                }
+    
+                // force show the first default tab
+                this.show(this._activeTab.id, true)
+    
+                // show tab content based on click
+                this._items.map(tab => {
+                    tab.triggerEl.addEventListener('click', () => {
+                        this.show(tab.id)
+                    })
+                })
+            }
+        }
+    
+        getActiveTab() {
+            return this._activeTab
+        }
+    
+        _setActiveTab(tab) {
+            this._activeTab = tab
+        }
+    
+        getTab(id) {
+            return this._items.filter(t => t.id === id)[0]
+        }
+    
+        show(id, forceShow = false) {
+            const tab = this.getTab(id)
+    
+            // don't do anything if already active
+            if (tab === this._activeTab && !forceShow) {
+                return
+            }
+    
+            // hide other tabs
+            this._items.map(t => {
+                if (t !== tab) {
+                    t.triggerEl.classList.remove(...this._options.activeClasses.split(" "));
+                    t.triggerEl.classList.add(...this._options.inactiveClasses.split(" "));
+                    t.targetEl.classList.add('hidden')
+                    t.triggerEl.setAttribute('aria-selected', false)
+                }
+            })
+    
+            // show active tab
+            tab.triggerEl.classList.add(...this._options.activeClasses.split(" "));
+            tab.triggerEl.classList.remove(...this._options.inactiveClasses.split(" "));
+            tab.triggerEl.setAttribute('aria-selected', true)
+            tab.targetEl.classList.remove('hidden')
+    
+            this._setActiveTab(tab)
+    
+            // callback function
+            this._options.onShow(this, tab)
+        }
+    
+    }
+    
+    window.Tabs = Tabs;
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-tabs-toggle]').forEach(triggerEl => {
+    
+            const tabElements = []
+            let defaultTabId = null
+            triggerEl.querySelectorAll('[role="tab"]').forEach(el => {
+                const isActive = el.getAttribute('aria-selected') === 'true'
+                const tab = {
+                    id: el.getAttribute('data-tabs-target'),
+                    triggerEl: el,
+                    targetEl: document.querySelector(el.getAttribute('data-tabs-target'))
+                }
+                tabElements.push(tab)
+    
+                if (isActive) {
+                    defaultTabId = tab.id
+                }
+            })
+            new Tabs(tabElements, {
+                defaultTabId: defaultTabId
+            })
+        })
+    })
+} catch (error) {
+    
+}
+</script>

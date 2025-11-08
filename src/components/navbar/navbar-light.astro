@@ -1,0 +1,79 @@
+---
+import logoDark from '../../assets/images/logo-dark.png'
+import logoLight from '../../assets/images/logo-light.png'
+---
+<nav class="navbar" id="navbar">
+    <div class="container relative flex flex-wrap items-center justify-between">
+        <a class="navbar-brand md:me-8" href="index.html">
+            <span class="inline-block dark:hidden">
+                <img src={logoDark.src} class="l-dark" alt="">
+                <img src={logoLight.src} class="l-light" alt="">
+            </span>
+            <img src={logoLight.src} class="hidden dark:inline-block" alt="">
+        </a>
+
+        <div class="nav-icons flex items-center lg_992:order-2 ms-auto md:ms-8">
+            <!-- <ul class="list-none menu-social mb-0">
+                <li class="inline">
+                    <a href="" class="h-8 px-4 text-[12px] tracking-wider inline-flex items-center justify-center font-medium rounded-md bg-teal-500 text-white uppercase">Login</a>
+                </li>
+            </ul> -->
+            <button data-collapse="menu-collapse" type="button" class="collapse-btn inline-flex items-center ms-2 text-dark dark:text-white lg_992:hidden" aria-controls="menu-collapse" aria-expanded="false">
+                <span class="sr-only">Navigation Menu</span>
+                <i class="mdi mdi-menu text-[24px]"></i>
+            </button>
+        </div>
+
+        <div class="navigation lg_992:order-1 lg_992:flex hidden" id="menu-collapse">
+            <ul class="navbar-nav nav-light sidebar-nav" id="navbar-navlist">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home" data-section="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services" data-section="services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#review" data-section="review">Testimonial</a>
+                </li> <!--
+                <li class="nav-item">
+                    <a class="nav-link" href="#pricing" data-section="pricing">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#blog" data-section="blog">Blogs</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact" data-section="contact">Contact us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll<HTMLAnchorElement>(".nav-link");
+    
+        function changeActiveLink() {
+            let currentSection: string | null = null;
+    
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                    currentSection = section.getAttribute("id");
+                }
+            });
+    
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.dataset.section === currentSection) {
+                    link.classList.add("active");
+                }
+            });
+        }
+    
+        window.addEventListener("scroll", changeActiveLink);
+        changeActiveLink(); 
+    });
+</script>

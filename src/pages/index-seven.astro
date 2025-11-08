@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+import heroImg from '../assets/images/home.png'
+import About from '../components/about.astro';
+import Services from '../components/services.astro';
+import ProcessTab from '../components/process-tab.astro';
+import Cta from '../components/cta.astro';
+import Client from '../components/client.astro';
+import Price from '../components/price.astro';
+import Blog from '../components/blog.astro';
+import Contact from '../components/contact.astro';
+import Footer from '../components/footer.astro';
+import NavbarLight from '../components/navbar/navbar-light.astro';
+---
+
+<Layout>
+	<NavbarLight/>
+	
+     <section class="swiper-slider-hero relative block h-screen" id="home">
+        <div class="swiper swiper-container absolute end-0 top-0 w-full h-full">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide flex items-center overflow-hidden">
+                    <div class="slide-inner absolute end-0 top-0 w-full h-full slide-bg-image flex items-center bg-[url('../../assets/images/bg/1.jpg')] bg-center;">
+                        <div class="absolute inset-0 bg-slate-900/70"></div>
+                        <div class="container relative">
+                            <div class="grid grid-cols-1">
+                                <div class="">
+                                    <h1 class="font-bold lg:leading-normal leading-normal tracking-wide text-4xl lg:text-5xl capitalize text-white mb-5">Connect with <br> customers smartly</h1>
+                                    <p class="text-white/70 text-lg max-w-xl">This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+                                    
+                                    <div class="mt-6">
+                                        <a href="" class="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-teal-500 text-white">See More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+
+                <div class="swiper-slide flex items-center overflow-hidden">
+                    <div class="slide-inner absolute end-0 top-0 w-full h-full slide-bg-image flex items-center  bg-[url('../../assets/images/bg/2.jpg')] bg-center;">
+                        <div class="absolute inset-0 bg-slate-900/70"></div>
+                        <div class="container relative">
+                            <div class="grid grid-cols-1">
+                                <div class="">
+                                    <h1 class="font-bold lg:leading-normal leading-normal tracking-wide text-4xl lg:text-5xl capitalize text-white mb-5">Get all the <br> inspirations for your business</h1>
+                                    <p class="text-white/70 text-lg max-w-xl">This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+                                    
+                                    <div class="mt-6">
+                                        <a href="" class="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-teal-500 text-white">See More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next bg-transparent !size-[35px] leading-[35px] -mt-[30px] bg-none border border-solid border-white/50 text-white hover:bg-teal-500 rounded-full text-center"></div>
+            <div class="swiper-button-prev bg-transparent !size-[35px] leading-[35px] -mt-[30px] bg-none border border-solid border-white/50 text-white hover:bg-teal-500 rounded-full text-center"></div>
+        </div>
+    </section>
+
+	<section class="relative md:py-24 py-16">
+		<About/>
+	</section>
+
+	<section class="relative md:py-24 py-16 bg-slate-50 dark:bg-slate-800" id="services">
+		<Services/>
+	</section>
+
+	<section class="realtive md:py-24 py-16">
+		<ProcessTab/>
+	</section>
+
+	<Cta/>
+
+	<section class="relative md:py-24 py-16" id="review">
+		<Client/>
+	</section>
+
+	<section class="relative md:py-24 py-16 bg-slate-50 dark:bg-slate-800" id="pricing">
+		<Price/>
+	</section>
+
+	<section class="relative md:py-24 py-16" id="blog">
+		<Blog/>
+	</section>
+
+	<section class="relative lg:py-24 py-16 bg-slate-50 dark:bg-slate-800" id="contact">
+		<Contact/>
+	</section>
+
+	<Footer/>
+
+</Layout>
+
+<script>
+import Swiper from 'swiper';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+
+const swiper = new Swiper('.swiper', {
+  // configure Swiper to use modules
+     modules: [Autoplay],
+    loop: true,
+    speed: 1000,
+    parallax: true,
+    autoplay: {
+        delay: 6500,
+        disableOnInteraction: false,
+    },
+    watchSlidesProgress: true,
+    
+})
+</script>
+
+

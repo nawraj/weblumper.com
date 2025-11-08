@@ -1,16 +1,76 @@
 ---
-
+import NavbarDark from '../components/navbar/navbar-dark.astro';
+import Layout from '../layouts/Layout.astro';
+import heroImg from '../assets/images/design-team.svg'
+import About from '../components/about.astro';
+import Services from '../components/services.astro';
+import ProcessTab from '../components/process-tab.astro';
+import Cta from '../components/cta.astro';
+import Client from '../components/client.astro';
+import Price from '../components/price.astro';
+import Blog from '../components/blog.astro';
+import Contact from '../components/contact.astro';
+import Footer from '../components/footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+	<NavbarDark/>
+	
+	<section class="relative overflow-hidden md:py-48 py-40 bg-teal-500/5 dark:bg-teal-500/20" id="home">
+		<div class="container relative mt-8">
+			<div class="grid md:grid-cols-2 grid-cols-1 gap-6 items-center">
+				<div>
+					<h1 class="font-semibold lg:leading-normal leading-normal tracking-wide text-4xl lg:text-5xl mb-5">Full-Stack Web Solutions for Modern Businesses</h1>
+					<p class="text-slate-400 text-lg max-w-xl">We craft websites, eCommerce stores, and custom web applications that are visually stunning, highly performant, and easy to manage.</p>
+					
+					<div class="mt-6">
+						<a href="#contact" class="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-teal-500 text-white">Start Your Project Today <i class="mdi mdi-chevron-right ms-1"></i></a>
+					</div>
+				</div>
+
+				<div class="lg:ms-8">
+					<div class="relative">
+						<img src={heroImg.src} class="relative top-16" alt="">
+						<div class="overflow-hidden absolute md:size-[500px] size-[400px] bg-gradient-to-tl to-teal-500/20 via-teal-500/70 from-teal-500 bottom-1/2 translate-y-1/2 md:start-0 start-1/2 ltr:md:translate-x-0 ltr:-translate-x-1/2 rtl:md:translate-x-0 rtl:translate-x-1/2 -z-1 shadow-md shadow-teal-500/10 rounded-full"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="relative md:py-24 py-16">
+		<About/>
+	</section>
+
+	<section class="relative md:py-24 py-16 bg-slate-50 dark:bg-slate-800" id="services">
+		<Services/>
+	</section>
+
+	<section class="realtive md:py-24 py-16">
+		<ProcessTab/>
+	</section>
+
+	<!-- <Cta/> -->
+
+	<section class="relative md:py-24 py-16 bg-slate-50 dark:bg-slate-800" id="review">
+		<Client/>
+	</section>
+<!--
+	<section class="relative md:py-24 py-16 bg-slate-50 dark:bg-slate-800" id="pricing">
+		 <Price/> 
+	</section>
+
+	<section class="relative md:py-24 py-16" id="blog">
+		<Blog/> 
+	</section> 
+	-->
+
+	<section class="relative lg:py-24 py-16" id="contact">
+		<Contact/>
+	</section>
+
+	<Footer/>
+
+</Layout>
+
+

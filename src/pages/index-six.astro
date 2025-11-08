@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import heroImg from '../assets/images/home.png'
+import About from '../components/about.astro';
+import Services from '../components/services.astro';
+import ProcessTab from '../components/process-tab.astro';
+import Cta from '../components/cta.astro';
+import Client from '../components/client.astro';
+import Price from '../components/price.astro';
+import Blog from '../components/blog.astro';
+import Contact from '../components/contact.astro';
+import Footer from '../components/footer.astro';
+import NavbarLight from '../components/navbar/navbar-light.astro';
+---
+
+<Layout>
+	<NavbarLight/>
+	
+    <section class="relative md:h-screen md:py-0 py-36 items-center overflow-hidden bg-gradient-to-t to-teal-600 via-teal-600/50 from-transparent" id="home">
+        <div class="container relative">
+            <div class="grid grid-cols-1 md:mt-48 mt-10 text-center">
+                <h4 class="font-bold lg:leading-normal leading-normal tracking-wide text-4xl lg:text-5xl capitalize text-white mb-5">Get powerful <br> solutions for your business</h4>
+                <p class="text-white/70 text-lg max-w-xl mx-auto">This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+
+                <div class="subcribe-form mt-6 mb-3">
+                    <form class="relative max-w-xl mx-auto">
+                        <input type="email" id="emailid" name="email" class="py-4 pe-40 ps-6 w-full h-[50px] outline-none text-slate-900 dark:text-white rounded-full bg-white/60 dark:bg-slate-900/60 shadow-sm dark:shadow-gray-800" placeholder="yourname@domain.com">
+                        <button type="submit" class="px-6 tracking-wide inline-flex items-center justify-center font-medium absolute top-[2px] end-[3px] h-[46px] bg-teal-500 text-white rounded-full">Subscribe Now</button>
+                    </form>
+                </div>
+
+                <span class="text-white font-medium">Looking for help? <a href="" class="text-white underline">Get in touch with us</a></span>
+
+                <div class="overflow-hidden mt-8">
+                    <img src={heroImg.src} alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<section class="relative md:py-24 py-16">
+		<About/>
+	</section>
+
+	<section class="relative md:py-24 py-16 bg-slate-50 dark:bg-slate-800" id="services">
+		<Services/>
+	</section>
+
+	<section class="realtive md:py-24 py-16">
+		<ProcessTab/>
+	</section>
+
+	<Cta/>
+
+	<section class="relative md:py-24 py-16" id="review">
+		<Client/>
+	</section>
+
+	<section class="relative md:py-24 py-16 bg-slate-50 dark:bg-slate-800" id="pricing">
+		<Price/>
+	</section>
+
+	<section class="relative md:py-24 py-16" id="blog">
+		<Blog/>
+	</section>
+
+	<section class="relative lg:py-24 py-16 bg-slate-50 dark:bg-slate-800" id="contact">
+		<Contact/>
+	</section>
+
+	<Footer/>
+
+</Layout>
+
+

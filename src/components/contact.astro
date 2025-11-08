@@ -1,0 +1,103 @@
+---
+// src/components/contact.astro
+import contactImg from '../assets/images/contact.svg';
+---
+
+<div class="container relative">
+  <div class="grid grid-cols-1 pb-6 text-center">
+    <h3 class="font-semibold text-2xl leading-normal mb-4">Get in touch</h3>
+    <p class="text-slate-400 max-w-xl mx-auto">
+      Connect with WebLumper today and start building a website that drives results.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-12 grid-cols-1 items-center gap-6">
+    <!-- LEFT IMAGE -->
+    <div class="lg:col-span-7 md:col-span-6">
+      <img src={contactImg.src} alt="Contact illustration" />
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="lg:col-span-5 md:col-span-6">
+      <div class="lg:ms-5">
+        <div class="bg-white dark:bg-slate-900 rounded-md shadow-sm dark:shadow-gray-700 p-6">
+          <form id="contact-form" class="grid lg:grid-cols-12 grid-cols-1 gap-3">
+            <!-- HONEYPOT -->
+            <div style="position:absolute;left:-9999px;">
+              <input type="text" name="honeypot" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <!-- ALL FIELDS (unchanged) -->
+            <div class="lg:col-span-6">
+              <label for="name" class="font-semibold">Full Name:</label>
+              <input name="name" id="name" type="text" required class="mt-2 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-100 dark:border-gray-800 focus:ring-0" placeholder="Name :" />
+            </div>
+            <div class="lg:col-span-6">
+              <label for="email" class="font-semibold">Email:</label>
+              <input name="email" id="email" type="email" required class="mt-2 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-100 dark:border-gray-800 focus:ring-0" placeholder="Email :" />
+            </div>
+            <div class="lg:col-span-12">
+              <label for="subject" class="font-semibold">Project Type:</label>
+              <input name="subject" id="subject" required class="mt-2 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-100 dark:border-gray-800 focus:ring-0" placeholder="e.g., WordPress, Shopify, Headless CMS etc" />
+            </div>
+            <div class="lg:col-span-12">
+              <label for="comments" class="font-semibold">Description:</label>
+              <textarea name="comments" id="comments" rows="5" required class="mt-2 w-full py-2 px-3 h-28 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-100 dark:border-gray-800 focus:ring-0" placeholder="Project Description :"></textarea>
+            </div>
+            <div class="lg:col-span-6">
+              <label for="budget" class="font-semibold">Budget:</label>
+              <input name="budget" id="budget" type="text" class="mt-2 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-100 dark:border-gray-800 focus:ring-0" placeholder="e.g., $5k‑$10k" />
+            </div>
+            <div class="lg:col-span-6">
+              <label for="timeline" class="font-semibold">Timeline:</label>
+              <input name="timeline" id="timeline" type="text" class="mt-2 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-100 dark:border-gray-800 focus:ring-0" placeholder="Week/Month :" />
+            </div>
+            <div class="lg:col-span-12">
+              <button type="submit" class="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-teal-500 text-white mt-2">
+                Let’s Talk
+              </button>
+            </div>
+          </form>
+
+          <!-- MESSAGE -->
+          <div id="form-message" class="mt-4 hidden"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{}}>
+  // Inline copy of contact-form.js – runs only in the browser
+  document.getElementById('contact-form')?.addEventListener('submit', async e => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+    if (formData.get('honeypot')) return; // spam
+
+    const payload = Object.fromEntries(formData);
+    const msgEl = document.getElementById('form-message');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        msgEl.innerHTML = `<p class="text-green-600 bg-green-100 p-3 rounded">Thank you! We’ll reply soon.</p>`;
+        form.reset();
+      } else {
+        throw new Error(data.error || 'Submission failed');
+      }
+    } catch (err) {
+      msgEl.innerHTML = `<p class="text-red-600 bg-red-100 p-3 rounded">Error: ${err.message}</p>`;
+    }
+
+    msgEl.classList.remove('hidden');
+  });
+</script>

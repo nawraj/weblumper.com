@@ -46,8 +46,9 @@ WebLumper – Business websites, portfolios, Shopify e‑commerce & eBay marketp
 
   const mail = {
     personalizations: [{ to: [{ email: 'hello@weblumper.com' }] }], // <-- YOUR EMAIL
-    from: { email: 'noreply@weblumper.com', name: 'WebLumper' },
-    subject: `New Lead: ${subject}`,
+    from: { email: 'noreply@weblumper-com.pages.dev', 
+    name: 'WebLumper' },
+    subject: `New Inquiry: ${subject}`,
     content: [{ type: 'text/plain', value: emailBody }],
   };
 

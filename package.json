@@ -1,8 +1,8 @@
 {
   "name": "Weblumper",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "type": "module",
-  "description": "Weblumper - Astro Js Business Landing Page Template",
+  "description": "Weblumper - Digital Solutions for Your Online Success",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

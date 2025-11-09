@@ -138,7 +138,7 @@ export const socialData = [
         icon:'shopping-cart'
     },
     {
-        link:'https://dribbble.com/',
+        link:'https://dridbbble.com/',
         icon:'dribbble'
     },
     {
@@ -158,7 +158,7 @@ export const socialData = [
         icon:'twitter'
     },
     {
-        link:'hello@weblumper.com',
+        link:'mailto:hello@weblumper.com',
         icon:'mail'
     },
 ]

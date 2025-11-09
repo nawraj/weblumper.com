@@ -103,8 +103,8 @@ try {
 try {
     const Default = {
         defaultTabId: null,
-        activeClasses: 'text-white bg-teal-500',
-        inactiveClasses: 'hover:text-teal-500 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800',
+        activeClasses: 'text-white bg-green-600',
+        inactiveClasses: 'hover:text-green-600 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800',
         onShow: () => { }
     }
     

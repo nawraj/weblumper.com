@@ -8,11 +8,11 @@
         .navbar-nav {
             @apply mt-4 flex flex-row overflow-y-scroll h-24;
             .nav-link {
-                @apply block p-3 text-[12px] uppercase text-black tracking-wider hover:text-teal-500 dark:text-white/60 dark:hover:text-white font-medium;
+                @apply block p-3 text-[12px] uppercase text-black tracking-wider hover:text-green-600 dark:text-white/60 dark:hover:text-white font-medium;
             }
             .active {
                 .nav-link {
-                    @apply text-teal-500 dark:text-white;
+                    @apply text-green-600 dark:text-white;
                 }
             }
         }
@@ -107,7 +107,7 @@
                 .nav-link {
                     @apply border-0 hover:bg-transparent;
                     &.active{
-                        @apply text-teal-500;
+                        @apply text-green-600;
                     }
                 }
 
@@ -138,25 +138,25 @@
                 .nav-link {
                     @apply text-black dark:text-white/60;
                     &.active{
-                        @apply text-teal-500;
+                        @apply text-green-600;
                     }
                 }
                 .active {
                     .nav-link {
-                        @apply text-teal-500;
+                        @apply text-green-600;
                     }
                 }
 
                 &.nav-light {
                     .nav-link {
-                        @apply text-black hover:text-teal-500 dark:text-white/60 dark:hover:text-white;
+                        @apply text-black hover:text-green-600 dark:text-white/60 dark:hover:text-white;
                         &.active{
-                            @apply text-teal-500 dark:text-white;
+                            @apply text-green-600 dark:text-white;
                         }
                     }
                     .active {
                         .nav-link {
-                            @apply text-teal-500 dark:text-white;
+                            @apply text-green-600 dark:text-white;
                         }
                     }
                 }
@@ -174,12 +174,12 @@
                 .nav-link {
                     @apply text-black dark:text-white/60;
                     &.active{
-                        @apply text-teal-500;
+                        @apply text-green-600;
                     }
                 }
                 .active {
                     .nav-link {
-                        @apply text-teal-500;
+                        @apply text-green-600;
                     }
                 }
                 .menu-social {
